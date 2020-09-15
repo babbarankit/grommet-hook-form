@@ -1,0 +1,12 @@
+diff --git a/node_modules/grommet/components/TextInput/index.d.ts b/node_modules/grommet/components/TextInput/index.d.ts
+index 73c306d..fd3410a 100644
+--- a/node_modules/grommet/components/TextInput/index.d.ts
++++ b/node_modules/grommet/components/TextInput/index.d.ts
+@@ -21,6 +21,7 @@ export interface TextInputProps {
+   size?: "small" | "medium" | "large" | "xlarge" | string;
+   suggestions?: ({label?: React.ReactNode,value?: any} | string)[];
+   value?: string | number;
++  type?: 'text' | 'password';
+ }
+ 
+ declare const TextInput: React.ComponentClass<TextInputProps & Omit<JSX.IntrinsicElements['input'], 'onSelect' | 'size' | 'placeholder'>>;
