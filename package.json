@@ -1,6 +1,6 @@
 {
   "name": "grommet-hook-form",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Use React Hook Form with Grommet",
   "main": "components/index.js",
   "author": "Ankit Babbar <babbar.ankit@gmail.com>",
@@ -68,6 +68,7 @@
     "build-storybook": "build-storybook",
     "build": "rm -rf components/ && tsc",
     "watch": "tsc -w",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "test": "echo \"No test specified\""
   }
 }

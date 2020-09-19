@@ -1,9 +1,12 @@
 import React from 'react';
-import { TextArea as GTextArea, TextAreaProps as $TextAreaProps } from 'grommet/components/TextArea';
+import { TextArea as GTextArea } from 'grommet/components/TextArea';
 import { Controller } from 'react-hook-form';
+import { PropsOf } from 'grommet/utils';
 import { FormFieldInputProps } from '../FormField';
 
-export interface TextAreaProps extends Omit<$TextAreaProps, 'name'>, FormFieldInputProps<string> {}
+export interface TextAreaProps
+  extends FormFieldInputProps<string>,
+    Omit<PropsOf<typeof GTextArea>, 'name' | 'onChange' | 'defaultValue'> {}
 
 export const TextArea: React.FC<TextAreaProps> = ({
   name,

@@ -1,19 +1,15 @@
-import React from 'react';
+import React, { AriaAttributes } from 'react';
 import { useFormContext, FieldError } from 'react-hook-form';
 import getIn from 'lodash.get';
 import { FormField as GFormField, FormFieldProps as $FormFieldProps } from 'grommet/components/FormField';
 import { Box } from 'grommet/components/Box';
 import { Text } from 'grommet/components/Text';
 
-export interface FormFieldInputProps<T = any> {
-  ['aria-required']?: 'true' | 'false';
-  ['aria-invalid']?: 'true' | 'false';
+export interface FormFieldInputProps<T = any> extends AriaAttributes {
   name?: string;
   required?: boolean;
   htmlFor?: string;
-  onBlur?: (event: any) => void;
   onChange?: (value: T) => void;
-  style?: any;
   disabled?: boolean;
   control?: any;
   defaultValue?: T;

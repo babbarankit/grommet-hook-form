@@ -1,9 +1,12 @@
 import React from 'react';
-import { TextInput as $TextInput, TextInputProps as $TextInputProps } from 'grommet/components/TextInput';
+import { TextInput as $TextInput } from 'grommet/components/TextInput';
 import { FormFieldInputProps } from '../FormField';
 import { Controller } from 'react-hook-form';
+import { PropsOf } from 'grommet/utils';
 
-export interface TextInputProps extends Omit<$TextInputProps, 'name'>, FormFieldInputProps<string> {}
+export interface TextInputProps
+  extends FormFieldInputProps<string>,
+    Omit<PropsOf<typeof $TextInput>, 'name' | 'onChange' | 'defaultValue' | 'ref'> {}
 
 export const TextInput: React.FC<TextInputProps> = ({
   name,
