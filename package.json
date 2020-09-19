@@ -1,6 +1,6 @@
 {
   "name": "grommet-hook-form",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Use React Hook Form with Grommet",
   "main": "components/index.js",
   "author": "Ankit Babbar <babbar.ankit@gmail.com>",
