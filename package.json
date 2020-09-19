@@ -1,6 +1,6 @@
 {
   "name": "grommet-hook-form",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Use React Hook Form with Grommet",
   "main": "components/index.js",
   "author": "Ankit Babbar <babbar.ankit@gmail.com>",
@@ -34,6 +34,7 @@
     "fork-ts-checker-webpack-plugin": "^5.2.0",
     "grommet": "^2.15.0",
     "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
     "patch-package": "^6.2.2",
     "polished": "^3.6.6",
     "prettier": "^2.1.1",
