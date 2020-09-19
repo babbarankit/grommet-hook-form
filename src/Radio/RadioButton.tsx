@@ -1,14 +1,13 @@
 import React from 'react';
-import { CheckBoxGroup as $CheckBoxGroup } from 'grommet/components/CheckBoxGroup';
+import { RadioButton as $RadioButton } from 'grommet/components/RadioButton';
 import { FormFieldInputProps } from '../FormField';
 import { Controller } from 'react-hook-form';
 import { PropsOf } from 'grommet/utils';
 
-export interface CheckBoxGroupProps
-  extends FormFieldInputProps<boolean[]>,
-    Omit<PropsOf<typeof $CheckBoxGroup>, 'name' | 'onChange' | 'defaultValue' | 'ref'> {}
-
-export const CheckBoxGroup: React.FC<CheckBoxGroupProps> = ({
+export interface RadioButtonProps
+  extends FormFieldInputProps<boolean>,
+    Omit<PropsOf<typeof $RadioButton>, 'name' | 'onChange' | 'defaultValue' | 'ref'> {}
+export const RadioButton: React.FC<RadioButtonProps> = ({
   name,
   defaultValue,
   onChange: $onChange,
@@ -16,13 +15,15 @@ export const CheckBoxGroup: React.FC<CheckBoxGroupProps> = ({
   ...props
 }) => (
   <Controller
-    defaultValue={defaultValue}
     name={name}
+    defaultValue={defaultValue}
     render={({ onChange, onBlur, value }) => {
       return (
-        <$CheckBoxGroup
+        <$RadioButton
+          name={name}
           {...props}
-          onChange={({ value }: any) => {
+          onChange={(event: any) => {
+            const value: boolean = event.target.checked;
             $onChange && $onChange(value);
             onChange(value);
           }}
@@ -30,7 +31,7 @@ export const CheckBoxGroup: React.FC<CheckBoxGroupProps> = ({
             onBlur();
             $onBlur && $onBlur(event);
           }}
-          value={value}
+          checked={!!value}
         />
       );
     }}
